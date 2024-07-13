@@ -34,9 +34,9 @@ const App = () => {
     const convertedData = await fetch(`/api/download?id=${response.id}`);
 
     const convertedFile = await convertedData.blob();
-    setConvertedSound((soundArr) => [
+    setConvertedSound((convertedArr) => [
       new File([convertedFile], `${response.id}.wav`),
-      ...soundArr,
+      ...convertedArr,
     ]);
   };
 
@@ -61,9 +61,9 @@ const App = () => {
     const convertedData = await fetch(`/api/download?id=${response.id}`);
     const convertedFile = await convertedData.blob();
 
-    setConvertedSound((soundArr) => [
+    setConvertedSound((convertedArr) => [
       new File([convertedFile], `${response.id}.wav`),
-      ...soundArr,
+      ...convertedArr,
     ]);
   };
 
@@ -89,7 +89,7 @@ const App = () => {
           />
         </div>
       </div>
-      {convertedSound.length !== 0 && <SoundPlayer sounds={convertedSound} />}
+      <SoundPlayer sounds={convertedSound} />
     </main>
   );
 };

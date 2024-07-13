@@ -11,6 +11,9 @@ COPY tailwind.config.mjs ./
 COPY astro.config.mjs ./
 COPY .env ./
 
+RUN mkdir -p /app/sound
+RUN mkdir -p /app/converted
+
 FROM base AS build
 RUN corepack enable
 RUN pnpm install --prod
