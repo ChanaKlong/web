@@ -5,7 +5,7 @@ import SoundPlayer from "./SoundPlayer";
 
 const App = () => {
   const [sound, setSound] = useState<File | null>(null);
-  const [convertedSound, setConvertedSound] = useState<File | null>(null);
+  const [convertedSound, setConvertedSound] = useState<File[]>([]);
 
   const handleUpload = async () => {
     if (!sound) {
@@ -30,11 +30,14 @@ const App = () => {
     const convertedData = await fetch(`/api/download?id=${response.id}`);
 
     const convertedFile = await convertedData.blob();
-    setConvertedSound(new File([convertedFile], "converted.wav"));
+    setConvertedSound((soundArr) => [
+      new File([convertedFile], `${response.id}.wav`),
+      ...soundArr,
+    ]);
   };
 
   return (
-    <main className="flex justify-center min-h-screen items-center flex-col gap-y-3">
+    <main className="flex justify-center min-h-screen items-center flex-col gap-">
       <div className="shadow-md text-center flex flex-col gap-y-3 rounded-md p-4">
         <h1 className="text-xl font-bold">อะไรวะ</h1>
         <FileUpload setFile={setSound} />
@@ -44,7 +47,7 @@ const App = () => {
           Upload?
         </button>
       </div>
-      {convertedSound && <SoundPlayer sound={convertedSound} />}
+      {convertedSound.length !== 0 && <SoundPlayer sounds={convertedSound} />}
     </main>
   );
 };

@@ -1,12 +1,16 @@
 interface SoundPlayerProps {
-  sound: File;
+  sounds: File[];
 }
 
-const SoundPlayer: React.FC<SoundPlayerProps> = ({ sound }) => {
+const SoundPlayer: React.FC<SoundPlayerProps> = ({ sounds }) => {
   return (
-    <audio controls>
-      <source src={URL.createObjectURL(sound)} type="audio/wav" />
-    </audio>
+    <div className="flex flex-col gap-4 mt-4">
+      {sounds.map((sound: File, index: number) => (
+        <audio key={index} controls>
+          <source src={URL.createObjectURL(sound)} />
+        </audio>
+      ))}
+    </div>
   );
 };
 
