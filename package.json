@@ -20,6 +20,7 @@
     "astro": "^4.11.5",
     "fs": "0.0.1-security",
     "react": "^18.3.1",
+    "react-audio-voice-recorder": "^2.2.0",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3",

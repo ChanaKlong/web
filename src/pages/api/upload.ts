@@ -17,8 +17,6 @@ export const POST: APIRoute = async ({ request }) => {
   const reader = sound?.stream().getReader();
   const writer = fs.createWriteStream(`./sound/${id}.wav`);
 
-  console.log(`Uploading ${sound?.name}...`);
-
   const write = async () => {
     const { done, value } = await reader.read();
     if (done) {
