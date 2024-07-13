@@ -7,7 +7,7 @@
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": ["node"],
+    "types": ["node", "uuid"],
     "verbatimModuleSyntax": true,
     "plugins": [{ "name": "@astrojs/ts-plugin" }]
   }

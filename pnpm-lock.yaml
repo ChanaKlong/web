@@ -29,9 +29,6 @@ dependencies:
   astro:
     specifier: ^4.11.5
     version: 4.11.5(@types/node@20.14.10)(typescript@5.5.3)
-  fs:
-    specifier: 0.0.1-security
-    version: 0.0.1-security
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -2038,10 +2035,6 @@ packages:
   /fresh@0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
     engines: {node: '>= 0.6'}
-    dev: false
-
-  /fs@0.0.1-security:
-    resolution: {integrity: sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==}
     dev: false
 
   /fsevents@2.3.3:

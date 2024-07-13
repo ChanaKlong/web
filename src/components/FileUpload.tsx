@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface FileUploadProps {
   setFile: (file: File | null) => void;
 }
