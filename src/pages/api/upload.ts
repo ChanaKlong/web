@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import uuid from "uuid";
+import { v4 } from "uuid";
 
 import fs from "fs";
 
@@ -12,7 +12,7 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ message: "No sound uploaded!" }));
   }
 
-  const id = uuid.v4();
+  const id = v4();
 
   const reader = sound?.stream().getReader();
   const writer = fs.createWriteStream(`./sound/${id}.wav`);
